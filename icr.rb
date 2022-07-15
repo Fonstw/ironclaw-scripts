@@ -1,3 +1,11 @@
+=begin
+	This script takes a numeric string as input, rolls your dice and tells you
+	your results, sorted from high-to-low to make it easier to read them.
+
+	If you want a more friendly display, with a target number, try running
+	ironclaw_roller.rb instead.
+=end
+
 if ARGV[0] == nil
 	puts "Please provide your dice."
 	puts "46802 for d4's, d6's, d8's, d10's and d12's respectively."

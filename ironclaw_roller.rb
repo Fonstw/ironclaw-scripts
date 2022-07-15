@@ -1,3 +1,12 @@
+=begin
+	This script takes a numeric string as input, optionally a second number as
+	target number, rolls your input, compares it to the target number, and lets
+	you know how humans would play this result out.
+
+	If you don't know the target number, and need to know all your rolls, try
+	running icr.rb instead.
+=end
+
 # We require the dice string.
 if ARGV[0] == nil
 	puts "Please provide your dice."
