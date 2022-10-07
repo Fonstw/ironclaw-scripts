@@ -20,7 +20,9 @@ system_text = " -- rolling "
 dice = Array.new
 ARGV[0].chars.each do |die|
   die = die.to_i
+
   case die
+
   when 4, 6, 8
     system_text += "d#{die}, "
     dice.push rand 1..die
@@ -32,14 +34,16 @@ ARGV[0].chars.each do |die|
     puts "For example: 886 for \"2d8, d6\"."
     exit
   end
+
 end
 
 # Derive target number, take 3 if not given.
+# target = (ARGV[1] || "3").to_i
 target = ARGV[1] ? ARGV[1].to_i : 3
 
 # Target number should never be lower than 2 or higher than 11.
-target = [target, 2].max
-target = [target, 11].min
+# target = [[target, 2].max, 11].min
+target = target.clamp 2..11
 
 # Print vs.target, without the trailing comma and space from the die notation.
 puts system_text[0...-2] + " vs.#{target} -- "
